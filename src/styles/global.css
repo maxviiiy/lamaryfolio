@@ -121,3 +121,13 @@ body {
   scrollbar-color: var(--dark-purple) var(--color-card-bg);
 }
 
+::selection {
+  background: var(--light-purple);
+  color: #fff;
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--dark-purple);
+  color: #fff;
+}
+

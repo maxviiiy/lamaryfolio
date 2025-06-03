@@ -78,8 +78,8 @@
 .connect-button {
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 4px;
-  background-color: var(--dark-purple);
+  border-radius: 30px;
+  background: var(--color-button-bg);
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease;
