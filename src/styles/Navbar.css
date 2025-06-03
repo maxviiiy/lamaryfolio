@@ -1,0 +1,133 @@
+.navbar {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 1rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-nav-underline);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-hover);
+}
+
+.nav-links a.active {
+  color: var(--color-nav-underline);
+  font-weight: 700;
+  
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.controls button:hover {
+  color: var(--color-hover);
+}
+
+.connect-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-purple);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.theme-toggle svg {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.theme-toggle:hover svg {
+  color: var(--color-hover);
+  transform: rotate(-20deg) scale(1.2);
+}
+
+.theme-transition-circle {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg);
+  animation: theme-circle-reveal 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+[data-theme="dark"] .theme-transition-circle {
+  background: #0e0e12; 
+}
+[data-theme="light"] .theme-transition-circle {
+  background: #f4f4fa; 
+}
+
+@keyframes theme-circle-reveal {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  80% {
+    width: 3000px;
+    height: 3000px;
+    opacity: 1;
+  }
+  100% {
+    width: 3000px;
+    height: 3000px;
+    opacity: 0;
+  }
+}

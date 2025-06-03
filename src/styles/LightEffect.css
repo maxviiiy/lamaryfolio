@@ -1,0 +1,38 @@
+.light-effect {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.top-right {
+  top: -100px;
+  right: -100px;
+}
+
+.bottom-left {
+  bottom: -100px;
+  left: -100px;
+}
+
+@media (max-width: 768px) {
+  .light-effect {
+    width: 250px;
+    height: 250px;
+    filter: blur(90px);
+  }
+
+  .top-right {
+    top: -60px;
+    right: -60px;
+  }
+
+  .bottom-left {
+    bottom: -60px;
+    left: -60px;
+  }
+}

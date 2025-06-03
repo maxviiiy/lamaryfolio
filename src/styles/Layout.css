@@ -1,0 +1,23 @@
+.MainLayout {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.main-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+}
+
+

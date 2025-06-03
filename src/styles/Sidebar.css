@@ -1,0 +1,118 @@
+.sidebar {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  padding: 2rem;
+  width: 280px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.avatar-container {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-size: 1.5rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  display: block;
+  font-size: 2.5rem;
+}
+
+.specialization,
+.location {
+  text-align: left;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.label-small {
+  font-size: 0.8rem;
+  color: var(--color-subtext);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.specialization-value {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.location-value {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.social-icons a {
+  color: var(--color-text);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--color-hover);
+}
+
+.cta-button {
+  padding: 0.75rem 1.25rem;
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.cta-button:hover {
+  background-color: var(--color-hover);
+}
