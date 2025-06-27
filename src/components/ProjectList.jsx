@@ -1,58 +1,38 @@
+import { useEffect, useState } from "react";
+import { getTopProjects } from "../services/githubService";
 import ProjectCard from "./ProjectCard";
+import ProjectSkeleton from "./ProjectSkeleton";
 import { Link } from "react-router-dom";
-// import "./ProjectList.css";
+import { FadeInSection } from "./FadeInSection";
 
-export default function ProjectList({ projects, limit = 3, showSeeMore = true }) {
-  const previewProjects = projects.slice(0, limit);
+export default function ProjectPreview() {
+  const [projects, setProjects] = useState(null);
+
+  useEffect(() => {
+    getTopProjects().then(setProjects);
+  }, []);
 
   return (
-    <div className="project-list">
-      {previewProjects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          title={project.name}
-          description={project.description}
-          technologies={project.topics}
-          githubUrl={project.html_url}
-        />
-      ))}
-
-      {showSeeMore && projects.length > limit && (
-        <Link to="/projects" className="see-more-card">
-          <span>See More Projects →</span>
+    <div className="project-grid" id="portfolio">
+      {projects
+        ? projects.map((p) => (
+            <FadeInSection key={p.id}>
+              <ProjectCard
+                title={p.name}
+                description={p.description}
+                technologies={p.topics}
+                githubUrl={p.html_url}
+              />
+            </FadeInSection>
+          ))
+        : Array.from({ length: 3 }).map((_, i) => (
+            <ProjectSkeleton key={i} />
+          ))}
+      {projects && (
+        <Link to="/projects" className="project-card see-more">
+          <h3>See more</h3>
         </Link>
       )}
     </div>
   );
 }
-
-// import projectService from '../services/projectService';
-// import ProjectCard from './ProjectCard';
-// import './ProjectList.css';
-
-// const ProjectList = () => {
-//   const [projects, setProjects] = useState([]);
-
-//   useEffect(() => {
-//     const fetchProjects = async () => {
-//       try {
-//         const data = await projectService.getProjects();
-//         setProjects(data);
-//       } catch (error) {
-//         console.error('Error fetching projects:', error);
-//       }
-//     };
-
-//     fetchProjects();
-//   }, []);
-
-//   return (
-//     <div className="project-list">
-//       {projects.map(project => (
-//         <ProjectCard key={project.name} project={project} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default ProjectList;

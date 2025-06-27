@@ -1,0 +1,30 @@
+.project-grid,
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.see-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-card-bg);
+  border: 2px dashed var(--light-purple);
+  color: var(--dark-purple);
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  min-height: 160px;
+  text-decoration: none;
+}
+
+.see-more:hover {
+  background: var(--light-purple);
+  color: #fff;
+  border-color: var(--dark-purple);
+}

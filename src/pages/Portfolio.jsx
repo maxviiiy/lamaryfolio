@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
-import ProjectList from "../components/ProjectList";
+import { getAllShowcaseProjects } from "../services/githubService";
+import ProjectCard from "./ProjectCard";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/github-projects")
-      .then((res) => res.json())
-      .then((data) => setProjects(data));
+    getAllShowcaseProjects().then(setProjects);
   }, []);
 
   return (
-    <section className="projects-page container">
-      <h2>All Projects</h2>
-      <ProjectList projects={projects} limit={Infinity} showSeeMore={false} />
-    </section>
+    <div className="project-grid">
+      {projects.map((p) => (
+        <ProjectCard
+          key={p.id}
+          title={p.name}
+          description={p.description}
+          technologies={p.topics}
+          githubUrl={p.html_url}
+        />
+      ))}
+    </div>
   );
 }
