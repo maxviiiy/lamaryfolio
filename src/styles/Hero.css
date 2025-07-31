@@ -7,11 +7,16 @@
   text-align: left;
   background-color: var(--color-bg);
   z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-content {
   max-width: 800px;
+  width: 100%;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .hero-subtitle {
@@ -63,6 +68,15 @@
   gap: 1rem;
 }
 
+.btn-download {
+  margin-left: 1rem;
+}
+
+.btn-download-icon {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
 .btn-light {
   background: none;
   color: var(--dark-purple);
@@ -74,4 +88,17 @@
   background: var(--light-purple);
   color: #fff;
   border-color: var(--light-purple);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-download {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
 }

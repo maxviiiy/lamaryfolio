@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectSkeleton from "./ProjectSkeleton";
 import { Link } from "react-router-dom";
 import { FadeInSection } from "./FadeInSection";
+import "../styles/ProjectList.css";
 
 export default function ProjectPreview() {
   const [projects, setProjects] = useState(null);
@@ -29,7 +30,7 @@ export default function ProjectPreview() {
             <ProjectSkeleton key={i} />
           ))}
       {projects && (
-        <Link to="/projects" className="project-card see-more">
+        <Link to="/portfolio" className="project-card see-more">
           <h3>See more</h3>
         </Link>
       )}

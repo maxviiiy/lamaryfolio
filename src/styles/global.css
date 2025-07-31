@@ -6,10 +6,42 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scroll globally */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+section, div, main, article {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent any element from causing horizontal scroll */
+* {
+  max-width: 100%;
+}
+
+/* Root container should never exceed viewport */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
 html,
 body {
   font-family: "DM Sans", sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 :root {
@@ -129,5 +161,75 @@ body {
 [data-theme="dark"] ::selection {
   background: var(--dark-purple);
   color: #fff;
+}
+
+/* Global Responsive Styles */
+@media (max-width: 1200px) {
+  :root {
+    --font-size-xl: 2.5rem;
+    --font-size-lg: 1.75rem;
+  }
+  
+  .hero-content,
+  .main-content {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-xl: 2rem;
+    --font-size-lg: 1.5rem;
+    --font-size-md: 1.1rem;
+    --font-size-base: 0.95rem;
+    --font-size-sm: 0.8rem;
+  }
+  
+  html, body {
+    font-size: 14px;
+  }
+  
+  .hero,
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-content,
+  .main-content {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-xl: 1.75rem;
+    --font-size-lg: 1.25rem;
+    --font-size-md: 1rem;
+    --font-size-base: 0.9rem;
+    --font-size-sm: 0.75rem;
+  }
+  
+  html, body {
+    font-size: 13px;
+  }
+  
+  .hero,
+  section {
+    padding: 2rem 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --font-size-xl: 1.5rem;
+    --font-size-lg: 1.1rem;
+  }
+  
+  .hero,
+  section {
+    padding: 1.5rem 0.5rem;
+  }
 }
 

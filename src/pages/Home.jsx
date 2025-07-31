@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
-import Hero from '../components/Hero'
-import ProjectPreview from "../components/ProjectList";
+import Hero from '../components/Hero';
+import ProjectsSection from '../components/ProjectsSection';
+import AboutSection from '../components/AboutSection';
+import CTASection from '../components/CTASection';
+import "../styles/Home.css";
 
 const Home = () => {
   return (
     <div>
       <Hero />
-      <ProjectPreview />
+      <ProjectsSection />
+      <AboutSection />
+      <CTASection />
     </div>
   );
 };

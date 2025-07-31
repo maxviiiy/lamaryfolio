@@ -4,20 +4,70 @@
   height: 100vh;
   gap: 0.5rem;
   padding: 2rem;
+  background: var(--color-bg);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 .main-section {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .page-content {
   flex: 1;
   overflow-y: auto;
-  height: calc(100vh - 60px);
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+/* Responsive Layout Styles */
+@media (max-width: 1200px) {
+  .MainLayout {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .MainLayout {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .main-section {
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .page-content {
+    overflow: visible;
+    height: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainLayout {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .MainLayout {
+    padding: 0.5rem;
+  }
 }
 
 

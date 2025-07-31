@@ -1,4 +1,4 @@
-const BASE_URL = `https://api.github.com/users/maryqu3en/repos?per_page=100`;
+const BASE_URL = `https://api.github.com/users/maxviiiy/repos?per_page=100`;
 
 const techIconMap = {
   javascript: "🟨",

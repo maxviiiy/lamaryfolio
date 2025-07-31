@@ -1,5 +1,6 @@
 import { FaLinkedin, FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { Link } from "react-router-dom";
 import avatar from "../assets/avatar.jpeg";
 import "../styles/Sidebar.css";
 
@@ -32,23 +33,25 @@ const Sidebar = () => {
 
       <div className="actions">
         <div className="social-icons">
-          <a href="#">
+          <a href="https://linkedin.com/in/meriem-soubih" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="#">
+          <a href="https://facebook.com/meriem.soubih" target="_blank" rel="noopener noreferrer">
             <FaFacebook />
           </a>
-          <a href="#">
+          <a href="https://instagram.com/meriem.soubih" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
-          <a href="#">
+          <a href="https://github.com/maryqu3en" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
           <a href="mailto:soubih.meriem@gmail.com">
             <MdOutlineMail />
           </a>
         </div>
-        <button className="cta-button">Let's Work Together!</button>
+        <Link to="/contact" className="cta-button">
+          Let's Work Together!
+        </Link>
       </div>
     </aside>
   );

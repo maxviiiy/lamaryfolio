@@ -1,0 +1,200 @@
+/* About Page Styles */
+
+.about-page {
+  position: relative;
+}
+
+.about-hero-content {
+  max-width: 900px;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-what-i-do {
+  margin-bottom: 1rem;
+  color: var(--dark-purple);
+}
+
+.services-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service-card {
+  padding: 1.5rem;
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(90, 65, 160, 0.1);
+  border-color: var(--light-purple);
+}
+
+.service-title {
+  color: var(--dark-purple);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.service-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-subtext);
+}
+
+.tech-section {
+  margin-top: 2rem;
+}
+
+.tech-title {
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  border-color: var(--light-purple);
+  box-shadow: 0 4px 12px rgba(90, 65, 160, 0.1);
+}
+
+.beyond-coding {
+  margin-top: 2rem;
+}
+
+.beyond-coding-title {
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+}
+
+.about-actions {
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-hero-content {
+    max-width: 95%;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 3rem 1rem;
+  }
+  
+  .about-hero-content {
+    max-width: 100%;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .tech-tags {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .about-actions .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .about-actions .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 2rem 0.75rem;
+  }
+  
+  .service-card {
+    padding: 1rem;
+  }
+  
+  .service-icon {
+    font-size: 2rem;
+  }
+  
+  .service-title {
+    font-size: 1.1rem;
+  }
+  
+  .service-description {
+    font-size: 0.9rem;
+  }
+  
+  .tech-tags span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .about-intro {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-page {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .service-card {
+    padding: 0.75rem;
+  }
+  
+  .service-icon {
+    font-size: 1.8rem;
+  }
+  
+  .tech-tags {
+    gap: 0.5rem;
+  }
+  
+  .tech-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}

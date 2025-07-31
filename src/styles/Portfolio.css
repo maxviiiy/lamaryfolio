@@ -1,0 +1,87 @@
+/* Portfolio Page Styles */
+
+.portfolio-page {
+  position: relative;
+}
+
+.portfolio-hero-content {
+  max-width: 1200px;
+}
+
+.portfolio-header {
+  margin-bottom: 3rem;
+}
+
+.portfolio-description {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* Projects Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Empty State */
+.portfolio-empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.portfolio-empty-title {
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.portfolio-empty-description {
+  color: var(--color-subtext);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.portfolio-github-btn {
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-hero-content {
+    max-width: 100%;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .portfolio-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .portfolio-empty-state {
+    padding: 2rem;
+  }
+  
+  .portfolio-empty-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-empty-state {
+    padding: 1.5rem;
+  }
+  
+  .portfolio-empty-title {
+    font-size: 1.2rem;
+  }
+}

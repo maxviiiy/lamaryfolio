@@ -1,17 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import '../styles/Navbar.css';
 
-const sections = ['home', 'portfolio', 'about', 'resume', 'contact'];
+const sections = [
+  { id: 'home', path: '/', label: 'Home' },
+  { id: 'portfolio', path: '/portfolio', label: 'Portfolio' },
+  { id: 'about', path: '/about', label: 'About' },
+  { id: 'resume', path: '/resume', label: 'Resume' },
+  { id: 'contact', path: '/contact', label: 'Contact' }
+];
 
 export default function Navbar() {
-  const [active, setActive] = useState('home');
+  const location = useLocation();
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
   const [animating, setAnimating] = useState(false);
   const [circleStyle, setCircleStyle] = useState({});
   const buttonRef = useRef(null);
+
+  // Get active section based on current path
+  const getActiveSection = () => {
+    const currentSection = sections.find(section => section.path === location.pathname);
+    return currentSection ? currentSection.id : 'home';
+  };
 
   useEffect(() => {
     if (darkMode) {
@@ -22,25 +35,6 @@ export default function Navbar() {
       localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = 'home';
-      for (const id of sections) {
-        const section = document.getElementById(id);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 80 && rect.bottom >= 80) {
-            current = id;
-            break;
-          }
-        }
-      }
-      setActive(current);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const triggerThemeTransition = () => {
     if (!buttonRef.current) return;
@@ -62,17 +56,14 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <ul className="nav-links">
-          {sections.map((id) => (
-            <li key={id}>
-              <a
-                href={`#${id}`}
-                className={active === id ? 'active' : ''}
-                onClick={() => setActive(id)}
+          {sections.map((section) => (
+            <li key={section.id}>
+              <Link
+                to={section.path}
+                className={getActiveSection() === section.id ? 'active' : ''}
               >
-                {id === 'home'
-                  ? 'Home'
-                  : id.charAt(0).toUpperCase() + id.slice(1).replace('-', ' ')}
-              </a>
+                {section.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -105,9 +96,9 @@ export default function Navbar() {
               />
             )}
           </button>
-          <a href="#" className="connect-button">
+          <Link to="/contact" className="connect-button">
             Connect With Me
-          </a>
+          </Link>
         </div>
       </nav>
       {animating && (

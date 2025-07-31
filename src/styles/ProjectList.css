@@ -1,10 +1,31 @@
 .project-grid,
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 2.5rem;
   margin: 2rem 0;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .project-grid,
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .project-grid,
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
 }
 
 .see-more {
@@ -14,17 +35,45 @@
   background: var(--color-card-bg);
   border: 2px dashed var(--light-purple);
   color: var(--dark-purple);
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: all 0.3s ease;
   cursor: pointer;
-  min-height: 160px;
+  min-height: 280px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.see-more::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: var(--light-purple);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+
+.see-more h3 {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.see-more:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .see-more:hover {
-  background: var(--light-purple);
   color: #fff;
   border-color: var(--dark-purple);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(90, 65, 160, 0.2);
 }
