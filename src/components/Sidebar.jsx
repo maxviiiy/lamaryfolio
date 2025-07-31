@@ -33,16 +33,16 @@ const Sidebar = () => {
 
       <div className="actions">
         <div className="social-icons">
-          <a href="https://linkedin.com/in/meriem-soubih" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/meriem-soubih-864390254" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://facebook.com/meriem.soubih" target="_blank" rel="noopener noreferrer">
+          <a href="https://facebook.com/maxviiiy" target="_blank" rel="noopener noreferrer">
             <FaFacebook />
           </a>
-          <a href="https://instagram.com/meriem.soubih" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/maxviiiy" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
-          <a href="https://github.com/maryqu3en" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/maxviiiy" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
           <a href="mailto:soubih.meriem@gmail.com">

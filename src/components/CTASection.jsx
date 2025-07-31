@@ -15,7 +15,7 @@ const CTASection = () => {
         <div className="cta-buttons hero-buttons">
           <a href="/contact" className="btn">Get In Touch</a>
           <a 
-            href="https://github.com/maryqu3en" 
+            href="https://github.com/maxviiiy" 
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-light"

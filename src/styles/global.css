@@ -6,31 +6,8 @@
   box-sizing: border-box;
 }
 
-/* Prevent horizontal scroll globally */
-html {
-  overflow-x: hidden;
-  width: 100%;
-}
 
 body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-}
-
-/* Ensure all containers respect viewport width */
-section, div, main, article {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* Prevent any element from causing horizontal scroll */
-* {
-  max-width: 100%;
-}
-
-/* Root container should never exceed viewport */
-#root {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
@@ -163,7 +140,6 @@ body {
   color: #fff;
 }
 
-/* Global Responsive Styles */
 @media (max-width: 1200px) {
   :root {
     --font-size-xl: 2.5rem;

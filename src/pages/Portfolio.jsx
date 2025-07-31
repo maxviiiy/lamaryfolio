@@ -56,7 +56,7 @@ export default function Portfolio() {
                 to see my latest work.
               </p>
               <a 
-                href="https://github.com/maryqu3en" 
+                href="https://github.com/maxviiiy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn portfolio-github-btn"
