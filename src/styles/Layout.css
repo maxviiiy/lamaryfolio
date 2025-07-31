@@ -3,7 +3,7 @@
   overflow: hidden;
   height: 100vh;
   gap: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--color-bg);
   overflow-x: hidden;
   width: 100%;
@@ -31,7 +31,7 @@
 /* Responsive Layout Styles */
 @media (max-width: 1200px) {
   .MainLayout {
-    padding: 1.5rem;
+    padding: 1.2rem;
     gap: 1rem;
   }
 }
