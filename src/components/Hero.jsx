@@ -11,7 +11,7 @@ export default function Hero() {
         <FadeInSection>
           <p className="hero-subtitle">Hi, I'm Meriem 👋</p>
           <h1 className="hero-title">
-            Building clean & beautiful web apps <span className="highlight">with code & care.</span>
+            Building clean & beautiful web apps <span className="highlight">with form & function.</span>
           </h1>
           <p className="hero-description">
             I'm a software engineering student and full-stack developer crafting intuitive, performant, and delightful user experiences.

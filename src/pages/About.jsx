@@ -43,9 +43,7 @@ const About = () => {
         <div className="about-grid">
           <FadeInSection>
             <p className="hero-description" style={{ fontSize: "1.1rem" }}>
-              I'm a passionate <strong>Software Engineering student</strong> and <strong>Full-Stack Developer</strong> 
-              with a love for creating beautiful, functional, and user-friendly web applications. Based in Algeria, 
-              I combine technical expertise with creative problem-solving to bring ideas to life.
+              I'm a passionate <strong>Software Engineering student</strong> and <strong>Full-Stack Developer</strong> with a love for creating beautiful, functional, and user-friendly web applications. Based in Algeria, I combine technical expertise with creative problem-solving to bring ideas to life.
             </p>
           </FadeInSection>
 

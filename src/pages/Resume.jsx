@@ -11,8 +11,8 @@ const Resume = () => {
     {
       title: "Full-Stack Developer",
       company: "Freelance",
-      period: "2023 - Present",
-      location: "Remote",
+      period: "2025 - Present",
+      location: "Algeria",
       description: [
         "Developed responsive web applications using React, Node.js, and modern CSS frameworks",
         "Built RESTful APIs and integrated third-party services for various client projects",
