@@ -17,7 +17,7 @@ export default function Hero() {
             I'm a software engineering student and full-stack developer crafting intuitive, performant, and delightful user experiences.
           </p>
           <div className="hero-buttons">
-            <a href="#contact" className="btn">Get in Touch</a>
+            <a href="/contact" className="btn">Get in Touch</a>
             <a
               href="/CV.pdf"
               className="btn btn-light btn-download"

@@ -1,6 +1,7 @@
 import { FadeInSection } from "../components/FadeInSection";
 import SectionHeader from "../components/SectionHeader";
 import LightEffect from "../components/LightEffect";
+import { getTechLogos } from "../services/githubService";
 import "../styles/About.css";
 
 const About = () => {
@@ -20,16 +21,21 @@ const About = () => {
   ];
 
   const technologies = [
-    { name: "JavaScript", icon: "🟨" },
-    { name: "TypeScript", icon: "🔷" },
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🌿" },
-    { name: "CSS", icon: "🎨" },
-    { name: "HTML", icon: "🟧" },
-    { name: "Tailwind", icon: "🌬️" },
-    { name: "Prisma", icon: "🧩" },
-    { name: "Git", icon: "📦" },
+    { name: "javascript", title: "JavaScript" },
+    { name: "typescript", title: "TypeScript" },
+    { name: "react", title: "React" },
+    { name: "nodejs", title: "Node.js" },
+    { name: "css3", title: "CSS3" },
+    { name: "html5", title: "HTML5" },
+    { name: "tailwindcss", title: "Tailwind CSS" },
+    { name: "prisma", title: "Prisma ORM" },
+    { name: "git", title: "Git" },
+    { name: "express", title: "Express.js" },
+    { name: "postgresql", title: "PostgreSQL" },
+    { name: "mongodb", title: "MongoDB" },
   ];
+
+  const techLogos = getTechLogos(technologies.map(t => t.name));
 
   return (
     <section className="hero about-page" id="about">
@@ -63,11 +69,20 @@ const About = () => {
             <div className="tech-section">
               <h3 className="tech-title">Technologies I Love</h3>
               <div className="tech-tags">
-                {technologies.map((tech) => (
-                  <span key={tech.name} className="tech-tag">
-                    <span>{tech.icon}</span>
-                    {tech.name}
-                  </span>
+                {techLogos.map((tech, index) => (
+                  <div key={tech.name} className="tech-logo-about" title={technologies[index].title}>
+                    <img 
+                      src={tech.logoUrl} 
+                      alt={technologies[index].title}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <span className="tech-fallback" style={{ display: 'none' }}>
+                      {technologies[index].title.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -87,7 +102,7 @@ const About = () => {
           <FadeInSection>
             <div className="about-actions">
               <div className="hero-buttons">
-                <a href="#contact" className="btn">Let's Connect</a>
+                <a href="/contact" className="btn">Let's Connect</a>
                 <a href="/CV.pdf" className="btn btn-light" download style={{ marginLeft: "1rem" }}>
                   Download Resume
                 </a>
