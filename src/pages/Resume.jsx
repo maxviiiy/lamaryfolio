@@ -9,45 +9,41 @@ import "../styles/Resume.css";
 const Resume = () => {
   const experiences = [
     {
-      title: "Full-Stack Developer",
-      company: "Freelance",
-      period: "2025 - Present",
-      location: "Algeria",
+      title: "Full-Stack Developer Intern",
+      company: "El Imane Clinic",
+      period: "December 2024 - June 2025",
+      location: "Ain Defla, Algeria",
       description: [
-        "Developed responsive web applications using React, Node.js, and modern CSS frameworks",
-        "Built RESTful APIs and integrated third-party services for various client projects",
-        "Implemented database design and management using Prisma ORM and PostgreSQL",
-        "Collaborated with clients to deliver user-focused solutions that exceed expectations"
-      ]
-    },
-    {
-      title: "Frontend Developer",
-      company: "Personal Projects",
-      period: "2022 - 2023",
-      location: "Algeria",
-      description: [
-        "Created portfolio websites and web applications using React and TypeScript",
-        "Focused on responsive design and accessibility best practices",
-        "Implemented modern UI/UX patterns and interactive animations",
-        "Maintained high code quality standards and version control with Git"
+        "Developed a comprehensive clinic management website from scratch",
+        "Built full-stack application with patient management and medical records",
+        "Implemented secure authentication and role-based access control for staff and doctors",
+        "Designed and developed intuitive user interfaces for both administrative and patient portals",
+        "Managed database design and optimization for efficient data handling"
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Software Engineering",
-      school: "University",
-      period: "2021 - Present",
-      location: "Algeria",
-      description: "Studying computer science fundamentals, software development methodologies, and modern programming languages"
+      degree: "Master's Degree in Advanced Information Systems Engineering",
+      school: "University of Hassiba Ben Bouali",
+      period: "2025 - Present",
+      location: "Chlef, Algeria",
+      description: "Specializing in advanced information systems engineering, focusing on modern software architectures and enterprise solutions"
+    },
+    {
+      degree: "Bachelor's Degree in Computer Science (Information Systems)",
+      school: "University of Hassiba Ben Bouali",
+      period: "2022 - 2025",
+      location: "Chlef, Algeria",
+      description: "Completed comprehensive study in computer science with focus on information systems, software development, and database management"
     }
   ];
 
   const skills = {
-    "Frontend": ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
+    "Frontend": ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
     "Backend": ["Node.js", "Express.js", "RESTful APIs", "Database Design", "Authentication"],
-    "Database": ["PostgreSQL", "Prisma ORM", "Database Optimization"],
+    "Database": ["MongoDB", "PostgreSQL", "Prisma ORM", "Database Optimization"],
     "Tools & Other": ["Git", "GitHub", "VS Code", "Figma", "Agile Methodology", "Problem Solving"]
   };
 
