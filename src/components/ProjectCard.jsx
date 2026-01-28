@@ -1,8 +1,9 @@
-import { getTechIcons } from "../services/githubService";
+import { getTechLogos } from "../services/githubService";
 import "../styles/ProjectCard.css";
 
 export default function ProjectCard({ title, description, technologies, githubUrl }) {
-  const techs = getTechIcons(technologies);
+  const filteredTechs = technologies.filter(tech => tech.toLowerCase() !== 'showcase');
+  const techs = getTechLogos(filteredTechs);
 
   return (
     <div className="project-card">
@@ -16,9 +17,19 @@ export default function ProjectCard({ title, description, technologies, githubUr
       
       <div className="tech-stack">
         {techs.map((tech) => (
-          <span key={tech.name} title={tech.name}>
-            {tech.icon}
-          </span>
+          <div key={tech.name} className="tech-logo" title={tech.name}>
+            <img 
+              src={tech.logoUrl} 
+              alt={tech.name}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            <span className="tech-fallback" style={{ display: 'none' }}>
+              {tech.name.charAt(0).toUpperCase()}
+            </span>
+          </div>
         ))}
       </div>
       

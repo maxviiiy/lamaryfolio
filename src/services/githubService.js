@@ -62,3 +62,49 @@ export function getTechIcons(topics) {
     icon: techIconMap[tech.toLowerCase()] || "📦",
   }));
 }
+
+const techNameMap = {
+  javascript: 'javascript',
+  typescript: 'typescript',
+  react: 'react',
+  reactjs: 'react',
+  css: 'css3',
+  css3: 'css3',
+  html: 'html5',
+  html5: 'html5',
+  nodejs: 'nodejs',
+  node: 'nodejs',
+  tailwind: 'tailwindcss',
+  tailwindcss: 'tailwindcss',
+  prisma: 'prisma',
+  python: 'python',
+  java: 'java',
+  vue: 'vuejs',
+  vuejs: 'vuejs',
+  angular: 'angularjs',
+  express: 'express',
+  mongodb: 'mongodb',
+  postgresql: 'postgresql',
+  mysql: 'mysql',
+  docker: 'docker',
+  git: 'git',
+  github: 'github',
+  nextjs: 'nextjs',
+  'next.js': 'nextjs',
+  firebase: 'firebase',
+  redux: 'redux',
+  sass: 'sass',
+  scss: 'sass',
+  webpack: 'webpack',
+  vite: 'vitejs',
+};
+
+export function getTechLogos(topics) {
+  return topics.map((tech) => {
+    const techName = techNameMap[tech.toLowerCase()] || tech.toLowerCase();
+    return {
+      name: tech,
+      logoUrl: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${techName}/${techName}-original.svg`,
+    };
+  });
+}
